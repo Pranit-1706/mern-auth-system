@@ -13,7 +13,7 @@ connectDB();
 app.use(cors());
 app.use(bodyParser.json());
 
-// Setup Routes
+console.log("backend req");
 app.use('/auth', router);
 app.use('/product', productRouter);
 export default app;
