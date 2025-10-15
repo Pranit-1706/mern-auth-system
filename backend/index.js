@@ -5,12 +5,12 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import router from './routes/authRoutes.js';
 import productRouter from './routes/productRoutes.js';
-
+const cors = require('cors');
 
 dotenv.config();
 
 connectDB();
-
+app.use(cors());
 const app=express();
 
 const PORT=process.env.PORT || 8080;
