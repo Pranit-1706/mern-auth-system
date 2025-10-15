@@ -10,7 +10,7 @@ const HomePage = () => {
 
   const fetchProducts = async () => {
     try{
-      const res = await axios.get("/api/product", {
+      const res = await axios.get("/product", {
         headers: {
           Authorization: auth?.token || ''
         }
