@@ -1,23 +1,19 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import { connectDB } from './configs/db.js';
-import bodyParser from 'body-parser';
 import cors from 'cors';
+import bodyParser from 'body-parser';
+import { connectDB } from './configs/db.js';
 import router from './routes/authRoutes.js';
 import productRouter from './routes/productRoutes.js';
-const cors = require('cors');
 
 dotenv.config();
+const app = express();
 
 connectDB();
 app.use(cors());
-const app=express();
-
-const PORT=process.env.PORT || 8080;
-
 app.use(bodyParser.json());
-app.use(cors());
+
+// Setup Routes
 app.use('/auth', router);
 app.use('/product', productRouter);
-
-module.exports = app;
+export default app;
