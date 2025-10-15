@@ -20,6 +20,4 @@ app.use(cors());
 app.use('/auth', router);
 app.use('/product', productRouter);
 
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`);
-});
+module.exports = app;

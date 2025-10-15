@@ -30,7 +30,7 @@ const Signup = () => {
         }
 
         try{
-            const res = await axios.post("http://localhost:8080/auth/register", {
+            const res = await axios.post("/api/auth/register", {
                 name,
                 email,
                 password
