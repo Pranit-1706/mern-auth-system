@@ -9,11 +9,29 @@ import productRouter from './routes/productRoutes.js';
 dotenv.config();
 const app = express();
 
-connectDB();
+let isconnected = false;
+async function connectToDB(){
+    try{
+        await connectDB();
+        isconnected = true;
+    }catch(err){
+        console.error("Database connection failed:", err);
+    }
+}
+
+app.use((req, res, next) => {
+    if(!isconnected){
+        connectToDB().then(() => next());
+    }else{
+        next();
+    }
+});
+
 app.use(cors());
 app.use(bodyParser.json());
 
 console.log("backend req");
 app.use('/auth', router);
 app.use('/product', productRouter);
-export default app;
+
+module.exports = app;

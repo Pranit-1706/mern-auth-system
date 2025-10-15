@@ -31,7 +31,7 @@ const Login = () => {
         }
 
         try{
-            const res = await axios.post("/auth/login", {
+            const res = await axios.post("https://mern-auth-system-nu.vercel.app/auth/login", {
                 email,
                 password
             });

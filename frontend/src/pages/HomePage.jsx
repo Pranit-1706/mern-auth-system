@@ -10,7 +10,7 @@ const HomePage = () => {
 
   const fetchProducts = async () => {
     try{
-      const res = await axios.get("/product", {
+      const res = await axios.get("https://mern-auth-system-nu.vercel.app/product", {
         headers: {
           Authorization: auth?.token || ''
         }

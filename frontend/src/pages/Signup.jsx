@@ -30,7 +30,7 @@ const Signup = () => {
         }
 
         try{
-            const res = await axios.post("/auth/register", {
+            const res = await axios.post("https://mern-auth-system-nu.vercel.app/auth/register", {
                 name,
                 email,
                 password
