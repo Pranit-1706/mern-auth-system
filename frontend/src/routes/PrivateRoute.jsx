@@ -10,7 +10,7 @@ export default function PrivateRoute() {
 
     useEffect(() => {
         const authCheck = async () => {
-            const res = await axios.get("https://mern-auth-system-nu.vercel.app/api/product", {
+            const res = await axios.get("https://mern-auth-system-nu.vercel.app/product", {
                 headers: {
                     Authorization: auth?.token||''
                 }
