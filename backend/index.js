@@ -34,4 +34,4 @@ console.log("backend req");
 app.use('/auth', router);
 app.use('/product', productRouter);
 
-module.exports = app;
+export default app;
